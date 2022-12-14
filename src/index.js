@@ -9,7 +9,7 @@ const clearBtn = document.querySelector('.clear');
 const reloadImg = document.getElementById('reload');
 reloadImg.src = reload;
 
-let toDoArr = [
+const toDoArr = [
   {
     square: '<ion-icon class="square" name="square-outline"></ion-icon>',
     description: 'was the dishes',
@@ -29,7 +29,6 @@ let toDoArr = [
 for (let i = 0; i < toDoArr.length; i += 1) {
   const liList = document.createElement('li');
   liList.className = 'list-item';
-  liList.innerHTML =
-    toDoArr[i].square + toDoArr[i].description + toDoArr[i].icon;
+  liList.innerHTML = toDoArr[i].square + toDoArr[i].description + toDoArr[i].icon;
   ulList.insertBefore(liList, clearBtn);
 }

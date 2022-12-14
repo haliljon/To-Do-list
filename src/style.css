@@ -2,34 +2,40 @@ body {
   background-color: #f6f6f6;
   font-family: sans-serif;
 }
+
 #to-do-list {
   margin: 10%;
 }
+
 .to-do-list {
   list-style: none;
 }
+
 .list-item {
   font-size: 35px;
   line-height: 70px;
   background-color: white;
   border: solid 3px #f0f0f0;
-  box-shadow: 0px 8px 10px gray;
+  box-shadow: 0 8px 10px gray;
   padding-left: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 #input {
   font-size: 35px;
   line-height: 70px;
   border: none;
   font-style: italic;
 }
+
 .clear {
   color: #adadad;
   background-color: #f6f6f6;
   justify-content: center;
 }
+
 .list-icon {
   color: #adadad;
 }
