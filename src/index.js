@@ -1,4 +1,4 @@
-import reload from './icons8-refresh-30.svg';
+// import reload from './icons8-refresh-30.svg';
 import './style.css';
 
 const information = JSON.parse(localStorage.getItem('lists')) || [];
@@ -11,6 +11,7 @@ const inputBtn = document.querySelector('.input-btn');
 
 class ToDoList {
   editBtn = document.querySelectorAll('.edit-btn');
+
   displayList() {
     for (let i = 0; i < information.length; i += 1) {
       const liList = document.createElement('li');
@@ -33,6 +34,7 @@ class ToDoList {
     name="edit" class="edit-btn"><ion-icon class="list-icon" name="ellipsis-vertical"> </ion-icon></button><button type="button" name="delete" class="delete-btn"><ion-icon class="list-icon" name="trash-outline"></ion-icon></button>`;
     ulList.insertBefore(liList, clearBtn);
   }
+
   editList(edit) {
     const chosenItem = edit.previousSibling;
     chosenItem.setAttribute('contentEditable', true);
@@ -43,6 +45,9 @@ class ToDoList {
 
 const listCollection = new ToDoList();
 listCollection.displayList();
+function editBtnFun() {
+  return document.querySelectorAll('.edit-btn');
+}
 
 inputBtn.addEventListener('click', (e) => {
   if (input.value !== '') {
@@ -81,9 +86,6 @@ inputBtn.addEventListener('click', (e) => {
     });
   });
 });
-function editBtnFun() {
-  return document.querySelectorAll('.edit-btn');
-}
 const editBtn = editBtnFun();
 
 const deleteBtn = document.querySelectorAll('.delete-btn');
@@ -96,7 +98,7 @@ editBtn.forEach((btn, index) => {
     const chosenItem = btn.previousSibling;
     const data = JSON.parse(localStorage.getItem('lists'));
     const listItem = document.querySelectorAll('.list-item');
-    listItem[index].addEventListener('keypress', function (e) {
+    listItem[index].addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         chosenItem.setAttribute('contentEditable', false);
         const newText = chosenItem.textContent;
