@@ -28,6 +28,7 @@ body {
   line-height: 70px;
   border: none;
   font-style: italic;
+  width: 90%;
 }
 
 .clear {
@@ -44,8 +45,30 @@ body {
 .list-item {
   display: grid !important;
   grid-template-rows: 1fr;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: auto 1fr 3.5%;
   grid-template-areas: 'a b c d';
   justify-content: left;
   gap: 10px;
+}
+
+.input-btn,
+.edit-btn,
+.delete-btn {
+  background-color: white;
+  border: none;
+  color: #adadad;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.square {
+  transform: scale(1.75);
+}
+
+.list-item p {
+  margin: 0;
+}
+
+.delete-btn {
+  display: none;
 }

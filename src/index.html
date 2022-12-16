@@ -9,15 +9,21 @@
   <body>
     <div id="to-do-list">
       <ul class="to-do-list">
-        <li>Today's To Do <img id="reload" alt="reload img" /></li>
+        <li
+          >Today's To Do
+          <img id="reload" src="./icons8-refresh-30.svg" alt="reload img"
+        /></li>
         <li
           ><input
             id="input"
             type="text"
-            placeholder="Add to your list ..." /><ion-icon
-            class="list-icon"
-            name="return-down-back-outline"
-          ></ion-icon
+            name="add to list"
+            placeholder="Add to your list ..."
+            required /><button type="submit" class="input-btn"
+            ><ion-icon
+              class="list-icon"
+              name="return-down-back-outline"
+            ></ion-icon></button
         ></li>
         <li class="clear">Clear all completed</li>
       </ul>
@@ -30,5 +36,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="./index.js"></script>
   </body>
 </html>

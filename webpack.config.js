@@ -13,17 +13,22 @@ module.exports = {
     rules: [
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.svg$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
-            loader: 'svgo-loader',
+            loader: 'file-loader',
+            options: {},
           },
         ],
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: 'svgo-loader',
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [
