@@ -35,6 +35,14 @@ body {
   color: #adadad;
   background-color: #f6f6f6 !important;
   justify-content: center !important;
+  width: 100%;
+  font-size: 35px;
+  line-height: 70px;
+  border: none;
+}
+
+.to-do-list li:last-child {
+  background-color: #f6f6f6;
 }
 
 .list-icon {

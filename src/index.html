@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= htmlWebpackPlugin.options.title%></title>
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="to-do-list">
@@ -25,7 +26,9 @@
               name="return-down-back-outline"
             ></ion-icon></button
         ></li>
-        <li class="clear">Clear all completed</li>
+        <li
+          ><button type="button" class="clear"> Clear all completed</button></li
+        >
       </ul>
     </div>
     <script
@@ -36,6 +39,13 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script src="./index.js"></script>
+    <!-- <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+      integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
