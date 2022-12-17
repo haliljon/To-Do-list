@@ -1,6 +1,6 @@
 import './style.css';
 
-import { boxChecked, unCheck, clear } from './modules.js';
+import { boxChecked, unCheck } from './modules.js';
 
 const information = JSON.parse(localStorage.getItem('lists')) || [];
 const liList = document.createElement('li');
@@ -13,7 +13,7 @@ const inputBtn = document.querySelector('.input-btn');
 
 class ToDoList {
   editBtn = document.querySelectorAll('.edit-btn');
-  displayList() {
+  displayList(information) {
     for (let i = 0; i < information.length; i += 1) {
       const liList = document.createElement('li');
       liList.className = 'list-item';
@@ -55,7 +55,7 @@ class ToDoList {
 }
 
 const listCollection = new ToDoList();
-listCollection.displayList();
+listCollection.displayList(information);
 
 inputBtn.addEventListener('click', (e) => {
   if (input.value !== '') {
@@ -80,7 +80,6 @@ inputBtn.addEventListener('click', (e) => {
         if (e.key === 'Enter') {
           chosenItem.setAttribute('contentEditable', false);
           const newText = chosenItem.textContent;
-
           data[index] = { description: newText, completed: false };
           localStorage.setItem('lists', JSON.stringify(data));
         }
@@ -114,6 +113,7 @@ const deleteBtn = document.querySelectorAll('.delete-btn');
 editBtn.forEach((btn, index) => {
   btn.addEventListener('click', () => {
     listCollection.editList(btn);
+
     editBtn[index].style.display = 'none';
     deleteBtn[index].style.display = 'block';
     const chosenItem = btn.previousSibling;
@@ -151,9 +151,27 @@ checkBox.forEach((element, index) => {
     }
   });
 });
-
-clearBtn.addEventListener('click', () => {
-  for (let i = 0; i < information.length; i++) clear(i);
+clearBtn.addEventListener('click', (i) => {
+  const infos = JSON.parse(localStorage.getItem('lists')) || [];
+  const notCompleted = infos.filter(function (info) {
+    if (info.completed === false) {
+      return true;
+    }
+  });
+  localStorage.setItem('lists', JSON.stringify(notCompleted));
+  document.querySelectorAll('.list-item').forEach((e) => e.remove());
+  listCollection.displayList(notCompleted);
+  checkBox.forEach((element, index) => {
+    element.addEventListener('click', () => {
+      if (element.checked) {
+        console.log('1');
+        boxChecked(element, index);
+      } else {
+        console.log('2');
+        unCheck(element, index);
+      }
+    });
+  });
 });
 
 const reload = document.querySelector('#reload');
