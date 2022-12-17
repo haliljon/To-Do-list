@@ -21,14 +21,6 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.svg$/,
-      //   use: [
-      //     {
-      //       loader: 'svgo-loader',
-      //     },
-      //   ],
-      // },
     ],
   },
   plugins: [
