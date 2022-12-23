@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1671738294284" clover="3.2.0">
-  <project timestamp="1671738294284" name="All files">
-    <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6" elements="25" coveredelements="25" complexity="0" loc="17" ncloc="17" packages="1" files="5" classes="5"/>
+<coverage generated="1671783093539" clover="3.2.0">
+  <project timestamp="1671783093539" name="All files">
+    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="8" coveredelements="8" complexity="0" loc="6" ncloc="6" packages="1" files="2" classes="2"/>
     <file name="add.js" path="/Users/haliljonjuraboev/Desktop/Microverse/Module-2/week-2/To-Do-list/src/modules/add.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
     </file>
-    <file name="clearAll.js" path="/Users/haliljonjuraboev/Desktop/Microverse/Module-2/week-2/To-Do-list/src/modules/clearAll.js">
-      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-    </file>
     <file name="delete.js" path="/Users/haliljonjuraboev/Desktop/Microverse/Module-2/week-2/To-Do-list/src/modules/delete.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
-    </file>
-    <file name="edit.js" path="/Users/haliljonjuraboev/Desktop/Microverse/Module-2/week-2/To-Do-list/src/modules/edit.js">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-    </file>
-    <file name="updateStatus.js" path="/Users/haliljonjuraboev/Desktop/Microverse/Module-2/week-2/To-Do-list/src/modules/updateStatus.js">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
