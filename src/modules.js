@@ -1,16 +1,8 @@
-export function boxChecked(box, index) {
-  const information = JSON.parse(localStorage.getItem('lists')) || [];
-  const lineThrough = box.nextSibling;
-  lineThrough.style.textDecoration = 'line-through';
-  console.log(information);
-  information[index].completed = true;
-  localStorage.setItem('lists', JSON.stringify(information));
-}
+import updateCompletedStatus from './modules/updateStatus';
 
-export function unCheck(box, index) {
+export function boxCheck(index, isTrue) {
   const information = JSON.parse(localStorage.getItem('lists')) || [];
-  const lineThrough = box.nextSibling;
-  lineThrough.style.textDecoration = 'none';
-  information[index].completed = false;
+  console.log(information);
+  updateCompletedStatus(index, isTrue, information);
   localStorage.setItem('lists', JSON.stringify(information));
 }

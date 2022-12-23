@@ -1,6 +1,9 @@
 import './style.css';
-
-import { boxChecked, unCheck } from './modules.js';
+import { boxCheck } from './modules.js';
+import add from './modules/add';
+import deleteFunc from './modules/delete';
+import edit from './modules/edit';
+import clearAll from './modules/clearAll';
 
 const information = JSON.parse(localStorage.getItem('lists')) || [];
 const liList = document.createElement('li');
@@ -36,7 +39,7 @@ class ToDoList {
       description: input.value,
       completed: false,
     };
-    information.push(newList);
+    add(information, newList);
     localStorage.setItem('lists', JSON.stringify(information));
     const liList = document.createElement('li');
     liList.className = 'list-item';
@@ -80,7 +83,7 @@ inputBtn.addEventListener('click', (e) => {
         if (e.key === 'Enter') {
           chosenItem.setAttribute('contentEditable', false);
           const newText = chosenItem.textContent;
-          data[index] = { description: newText, completed: false };
+          edit(data, index, newText);
           localStorage.setItem('lists', JSON.stringify(data));
         }
       });
@@ -89,7 +92,7 @@ inputBtn.addEventListener('click', (e) => {
   deleteBtn.forEach((element, index) => {
     element.addEventListener('click', () => {
       ulList.removeChild(element.parentElement);
-      information.splice(index, 1);
+      deleteFunc(index, information);
       localStorage.setItem('lists', JSON.stringify(information));
     });
   });
@@ -97,9 +100,15 @@ inputBtn.addEventListener('click', (e) => {
   checkBox.forEach((element, index) => {
     element.addEventListener('click', () => {
       if (element.checked) {
-        boxChecked(element, index);
+        console.log('1');
+        boxCheck(index, true);
+        const lineThrough = element.nextSibling;
+        lineThrough.style.textDecoration = 'line-through';
       } else {
-        unCheck(element, index);
+        console.log('2');
+        const lineThrough = element.nextSibling;
+        lineThrough.style.textDecoration = 'none';
+        boxCheck(index, false);
       }
     });
   });
@@ -133,7 +142,7 @@ editBtn.forEach((btn, index) => {
 deleteBtn.forEach((element, index) => {
   element.addEventListener('click', () => {
     ulList.removeChild(element.parentElement);
-    information.splice(index, 1);
+    deleteFunc(index, information);
     localStorage.setItem('lists', JSON.stringify(information));
   });
 });
@@ -145,19 +154,21 @@ const checkBox = document.querySelectorAll('.square');
 checkBox.forEach((element, index) => {
   element.addEventListener('click', () => {
     if (element.checked) {
-      boxChecked(element, index);
+      console.log('1');
+      boxCheck(index, true);
+      const lineThrough = element.nextSibling;
+      lineThrough.style.textDecoration = 'line-through';
     } else {
-      unCheck(element, index);
+      console.log('2');
+      const lineThrough = element.nextSibling;
+      lineThrough.style.textDecoration = 'none';
+      boxCheck(index, false);
     }
   });
 });
 clearBtn.addEventListener('click', (i) => {
   const infos = JSON.parse(localStorage.getItem('lists')) || [];
-  const notCompleted = infos.filter(function (info) {
-    if (info.completed === false) {
-      return true;
-    }
-  });
+  const notCompleted = clearAll(infos);
   localStorage.setItem('lists', JSON.stringify(notCompleted));
   document.querySelectorAll('.list-item').forEach((e) => e.remove());
   listCollection.displayList(notCompleted);
@@ -165,10 +176,14 @@ clearBtn.addEventListener('click', (i) => {
     element.addEventListener('click', () => {
       if (element.checked) {
         console.log('1');
-        boxChecked(element, index);
+        boxCheck(index, true);
+        const lineThrough = element.nextSibling;
+        lineThrough.style.textDecoration = 'line-through';
       } else {
         console.log('2');
-        unCheck(element, index);
+        const lineThrough = element.nextSibling;
+        lineThrough.style.textDecoration = 'none';
+        boxCheck(index, false);
       }
     });
   });
