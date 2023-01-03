@@ -100,12 +100,10 @@ inputBtn.addEventListener('click', (e) => {
   checkBox.forEach((element, index) => {
     element.addEventListener('click', () => {
       if (element.checked) {
-        console.log('1');
         boxCheck(index, true);
         const lineThrough = element.nextSibling;
         lineThrough.style.textDecoration = 'line-through';
       } else {
-        console.log('2');
         const lineThrough = element.nextSibling;
         lineThrough.style.textDecoration = 'none';
         boxCheck(index, false);
@@ -154,12 +152,10 @@ const checkBox = document.querySelectorAll('.square');
 checkBox.forEach((element, index) => {
   element.addEventListener('click', () => {
     if (element.checked) {
-      console.log('1');
       boxCheck(index, true);
       const lineThrough = element.nextSibling;
       lineThrough.style.textDecoration = 'line-through';
     } else {
-      console.log('2');
       const lineThrough = element.nextSibling;
       lineThrough.style.textDecoration = 'none';
       boxCheck(index, false);
@@ -175,12 +171,10 @@ clearBtn.addEventListener('click', (i) => {
   checkBox.forEach((element, index) => {
     element.addEventListener('click', () => {
       if (element.checked) {
-        console.log('1');
         boxCheck(index, true);
         const lineThrough = element.nextSibling;
         lineThrough.style.textDecoration = 'line-through';
       } else {
-        console.log('2');
         const lineThrough = element.nextSibling;
         lineThrough.style.textDecoration = 'none';
         boxCheck(index, false);
